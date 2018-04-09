@@ -44,6 +44,8 @@ public class UnrealEnhancementsRuntime : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
+                "DistCurveEditor",
+                "RHI",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

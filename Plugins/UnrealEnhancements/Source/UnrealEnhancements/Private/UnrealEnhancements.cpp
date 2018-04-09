@@ -8,7 +8,6 @@
 
 #include "LevelEditor.h"
 
-
 static const FName UnrealEnhancementsTabName("UnrealEnhancements");
 
 #define LOCTEXT_NAMESPACE "FUnrealEnhancementsModule"
@@ -53,7 +52,7 @@ void FUnrealEnhancementsModule::StartupModule()
 	FTextDisplayStringRef ref = ptr.ToSharedRef();
 
 	// Update the display string reference to instead have the text "CHANGED"
-	bool retVal = FTextLocalizationManager::Get().UpdateDisplayString(ref, FString("CHANGED"),
+	bool retVal = FTextLocalizationManager::Get().UpdateDisplayString(ref, FString("Sets a particle's color over its lifetime, a function of particle RelativeTime.\nMust contain the \"Particle Color\" node in the particle's material to change color."),
 		FString("UObjectToolTips"), FString("ParticleModuleColorOverLife:ColorOverLife"));
 }
 
