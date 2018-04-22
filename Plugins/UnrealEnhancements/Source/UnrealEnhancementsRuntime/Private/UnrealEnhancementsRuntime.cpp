@@ -5,7 +5,6 @@
 #include "Framework/MultiBox/MultiBoxBuilder.h"
 #include "Misc/ConfigCacheIni.h"
 
-#include "LevelEditor.h"
 
 static const FName UnrealEnhancementsRuntimeTabName("UnrealEnhancementsRuntime");
 
@@ -13,7 +12,7 @@ static const FName UnrealEnhancementsRuntimeTabName("UnrealEnhancementsRuntime")
 
 void FUnrealEnhancementsRuntimeModule::StartupModule()
 {
-	FString ConfigFile = FPaths::ProjectPluginsDir() / TEXT("UnrealEnhancements/Config/UnrealEnhancements.ini");
+	FString ConfigFile = FPaths::EnginePluginsDir() / TEXT("UnrealEnhancements/Content/UnrealEnhancements.ini");
 	GConfig->LoadFile(ConfigFile);
 }
 

@@ -38,8 +38,6 @@ public class UnrealEnhancements : ModuleRules
 			{
 				"Projects",
 				"InputCore",
-				"UnrealEd",
-				"LevelEditor",
 				"CoreUObject",
 				"Engine",
 				"Slate",

@@ -14,15 +14,23 @@
 	"IsBetaVersion": false,
 	"Installed": false,
 	"Modules": [
-		{
-			"Name": "UnrealEnhancements",
-			"Type": "Editor",
-			"LoadingPhase": "Default"
-		},
-		{
-			"Name": "UnrealEnhancementsRuntime",
-			"Type": "Runtime",
-			"LoadingPhase": "PostConfigInit"
-		}
+    {
+      "Name": "UnrealEnhancements",
+      "Type": "Editor",
+      "LoadingPhase": "Default",
+      "WhitelistPlatforms": [
+        "Win32",
+        "Win64"
+      ]
+    },
+    {
+      "Name": "UnrealEnhancementsRuntime",
+      "Type": "Runtime",
+      "LoadingPhase": "PostConfigInit",
+      "WhitelistPlatforms": [
+        "Win32",
+        "Win64"
+      ]
+    }
 	]
 }

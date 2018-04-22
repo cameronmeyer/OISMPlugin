@@ -38,14 +38,8 @@ public class UnrealEnhancementsRuntime : ModuleRules
 			{
 				"Projects",
 				"InputCore",
-				"UnrealEd",
-				"LevelEditor",
 				"CoreUObject",
 				"Engine",
-				"Slate",
-				"SlateCore",
-                "DistCurveEditor",
-                "RHI",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

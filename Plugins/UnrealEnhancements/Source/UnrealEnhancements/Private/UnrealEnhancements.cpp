@@ -6,7 +6,6 @@
 #include "Misc/MessageDialog.h"
 #include "Framework/MultiBox/MultiBoxBuilder.h"
 
-#include "LevelEditor.h"
 
 static const FName UnrealEnhancementsTabName("UnrealEnhancements");
 
@@ -23,7 +22,7 @@ void FUnrealEnhancementsModule::StartupModule()
 	
 	PluginCommands = MakeShareable(new FUICommandList);
 
-	PluginCommands->MapAction(
+	/*PluginCommands->MapAction(
 		FUnrealEnhancementsCommands::Get().PluginAction,
 		FExecuteAction::CreateRaw(this, &FUnrealEnhancementsModule::PluginButtonClicked),
 		FCanExecuteAction());
@@ -42,7 +41,7 @@ void FUnrealEnhancementsModule::StartupModule()
 		ToolbarExtender->AddToolBarExtension("Settings", EExtensionHook::After, PluginCommands, FToolBarExtensionDelegate::CreateRaw(this, &FUnrealEnhancementsModule::AddToolbarExtension));
 		
 		LevelEditorModule.GetToolBarExtensibilityManager()->AddExtender(ToolbarExtender);
-	}
+	}*/
 
 	// Find the display text for the tooltip with key ParticleModuleColorLife::ColorOverLife
 	FTextDisplayStringPtr ptr = FTextLocalizationManager::Get().FindDisplayString(FString("UObjectToolTips"),
