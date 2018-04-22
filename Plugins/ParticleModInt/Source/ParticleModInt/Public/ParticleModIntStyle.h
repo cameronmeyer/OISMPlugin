@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "Styling/SlateStyle.h"
 
-class FUnrealEnhancementsStyle
+class FParticleModIntStyle
 {
 public:
 

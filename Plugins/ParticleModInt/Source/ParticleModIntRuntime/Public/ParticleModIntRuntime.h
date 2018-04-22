@@ -8,7 +8,7 @@
 class FToolBarBuilder;
 class FMenuBuilder;
 
-class FUnrealEnhancementsRuntimeModule : public IModuleInterface
+class FParticleModIntRuntimeModule : public IModuleInterface
 {
 public:
 

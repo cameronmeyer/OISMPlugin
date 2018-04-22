@@ -1,15 +1,15 @@
 // Copyright 1998-2017 Epic Games, Inc. All Rights Reserved.
 
-#include "UnrealEnhancementsStyle.h"
-#include "UnrealEnhancements.h"
+#include "ParticleModIntStyle.h"
+#include "ParticleModInt.h"
 #include "Framework/Application/SlateApplication.h"
 #include "Styling/SlateStyleRegistry.h"
 #include "SlateGameResources.h"
 #include "IPluginManager.h"
 
-TSharedPtr< FSlateStyleSet > FUnrealEnhancementsStyle::StyleInstance = NULL;
+TSharedPtr< FSlateStyleSet > FParticleModIntStyle::StyleInstance = NULL;
 
-void FUnrealEnhancementsStyle::Initialize()
+void FParticleModIntStyle::Initialize()
 {
 	if (!StyleInstance.IsValid())
 	{
@@ -18,16 +18,16 @@ void FUnrealEnhancementsStyle::Initialize()
 	}
 }
 
-void FUnrealEnhancementsStyle::Shutdown()
+void FParticleModIntStyle::Shutdown()
 {
 	FSlateStyleRegistry::UnRegisterSlateStyle(*StyleInstance);
 	ensure(StyleInstance.IsUnique());
 	StyleInstance.Reset();
 }
 
-FName FUnrealEnhancementsStyle::GetStyleSetName()
+FName FParticleModIntStyle::GetStyleSetName()
 {
-	static FName StyleSetName(TEXT("UnrealEnhancementsStyle"));
+	static FName StyleSetName(TEXT("ParticleModIntStyle"));
 	return StyleSetName;
 }
 
@@ -41,12 +41,12 @@ const FVector2D Icon16x16(16.0f, 16.0f);
 const FVector2D Icon20x20(20.0f, 20.0f);
 const FVector2D Icon40x40(40.0f, 40.0f);
 
-TSharedRef< FSlateStyleSet > FUnrealEnhancementsStyle::Create()
+TSharedRef< FSlateStyleSet > FParticleModIntStyle::Create()
 {
-	TSharedRef< FSlateStyleSet > Style = MakeShareable(new FSlateStyleSet("UnrealEnhancementsStyle"));
-	Style->SetContentRoot(IPluginManager::Get().FindPlugin("UnrealEnhancements")->GetBaseDir() / TEXT("Resources"));
+	TSharedRef< FSlateStyleSet > Style = MakeShareable(new FSlateStyleSet("ParticleModIntStyle"));
+	Style->SetContentRoot(IPluginManager::Get().FindPlugin("ParticleModInt")->GetBaseDir() / TEXT("Resources"));
 
-	Style->Set("UnrealEnhancements.PluginAction", new IMAGE_BRUSH(TEXT("ButtonIcon_40x"), Icon40x40));
+	Style->Set("ParticleModInt.PluginAction", new IMAGE_BRUSH(TEXT("ButtonIcon_40x"), Icon40x40));
 
 	return Style;
 }
@@ -57,7 +57,7 @@ TSharedRef< FSlateStyleSet > FUnrealEnhancementsStyle::Create()
 #undef TTF_FONT
 #undef OTF_FONT
 
-void FUnrealEnhancementsStyle::ReloadTextures()
+void FParticleModIntStyle::ReloadTextures()
 {
 	if (FSlateApplication::IsInitialized())
 	{
@@ -65,7 +65,7 @@ void FUnrealEnhancementsStyle::ReloadTextures()
 	}
 }
 
-const ISlateStyle& FUnrealEnhancementsStyle::Get()
+const ISlateStyle& FParticleModIntStyle::Get()
 {
 	return *StyleInstance;
 }

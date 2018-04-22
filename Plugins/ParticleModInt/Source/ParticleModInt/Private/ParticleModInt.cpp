@@ -1,44 +1,44 @@
 // Copyright 1998-2017 Epic Games, Inc. All Rights Reserved.
 
-#include "UnrealEnhancements.h"
-#include "UnrealEnhancementsStyle.h"
-#include "UnrealEnhancementsCommands.h"
+#include "ParticleModInt.h"
+#include "ParticleModIntStyle.h"
+#include "ParticleModIntCommands.h"
 #include "Misc/MessageDialog.h"
 #include "Framework/MultiBox/MultiBoxBuilder.h"
 
 
-static const FName UnrealEnhancementsTabName("UnrealEnhancements");
+static const FName ParticleModIntTabName("ParticleModInt");
 
-#define LOCTEXT_NAMESPACE "FUnrealEnhancementsModule"
+#define LOCTEXT_NAMESPACE "FParticleModIntModule"
 
-void FUnrealEnhancementsModule::StartupModule()
+void FParticleModIntModule::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
 	
-	FUnrealEnhancementsStyle::Initialize();
-	FUnrealEnhancementsStyle::ReloadTextures();
+	FParticleModIntStyle::Initialize();
+	FParticleModIntStyle::ReloadTextures();
 
-	FUnrealEnhancementsCommands::Register();
+	FParticleModIntCommands::Register();
 	
 	PluginCommands = MakeShareable(new FUICommandList);
 
 	/*PluginCommands->MapAction(
-		FUnrealEnhancementsCommands::Get().PluginAction,
-		FExecuteAction::CreateRaw(this, &FUnrealEnhancementsModule::PluginButtonClicked),
+		FParticleModIntCommands::Get().PluginAction,
+		FExecuteAction::CreateRaw(this, &FParticleModIntModule::PluginButtonClicked),
 		FCanExecuteAction());
 		
 	FLevelEditorModule& LevelEditorModule = FModuleManager::LoadModuleChecked<FLevelEditorModule>("LevelEditor");
 	
 	{
 		TSharedPtr<FExtender> MenuExtender = MakeShareable(new FExtender());
-		MenuExtender->AddMenuExtension("WindowLayout", EExtensionHook::After, PluginCommands, FMenuExtensionDelegate::CreateRaw(this, &FUnrealEnhancementsModule::AddMenuExtension));
+		MenuExtender->AddMenuExtension("WindowLayout", EExtensionHook::After, PluginCommands, FMenuExtensionDelegate::CreateRaw(this, &FParticleModIntModule::AddMenuExtension));
 
 		LevelEditorModule.GetMenuExtensibilityManager()->AddExtender(MenuExtender);
 	}
 	
 	{
 		TSharedPtr<FExtender> ToolbarExtender = MakeShareable(new FExtender);
-		ToolbarExtender->AddToolBarExtension("Settings", EExtensionHook::After, PluginCommands, FToolBarExtensionDelegate::CreateRaw(this, &FUnrealEnhancementsModule::AddToolbarExtension));
+		ToolbarExtender->AddToolBarExtension("Settings", EExtensionHook::After, PluginCommands, FToolBarExtensionDelegate::CreateRaw(this, &FParticleModIntModule::AddToolbarExtension));
 		
 		LevelEditorModule.GetToolBarExtensibilityManager()->AddExtender(ToolbarExtender);
 	}*/
@@ -55,36 +55,36 @@ void FUnrealEnhancementsModule::StartupModule()
 		FString("UObjectToolTips"), FString("ParticleModuleColorOverLife:ColorOverLife"));
 }
 
-void FUnrealEnhancementsModule::ShutdownModule()
+void FParticleModIntModule::ShutdownModule()
 {
 	// This function may be called during shutdown to clean up your module.  For modules that support dynamic reloading,
 	// we call this function before unloading the module.
-	FUnrealEnhancementsStyle::Shutdown();
+	FParticleModIntStyle::Shutdown();
 
-	FUnrealEnhancementsCommands::Unregister();
+	FParticleModIntCommands::Unregister();
 }
 
-void FUnrealEnhancementsModule::PluginButtonClicked()
+void FParticleModIntModule::PluginButtonClicked()
 {
 	// Put your "OnButtonClicked" stuff here
 	FText DialogText = FText::Format(
 							LOCTEXT("PluginButtonDialogText", "Add code to {0} in {1} to override this button's actions"),
-							FText::FromString(TEXT("FUnrealEnhancementsModule::PluginButtonClicked()")),
-							FText::FromString(TEXT("UnrealEnhancements.cpp"))
+							FText::FromString(TEXT("FParticleModIntModule::PluginButtonClicked()")),
+							FText::FromString(TEXT("ParticleModInt.cpp"))
 					   );
 	FMessageDialog::Open(EAppMsgType::Ok, DialogText);
 }
 
-void FUnrealEnhancementsModule::AddMenuExtension(FMenuBuilder& Builder)
+void FParticleModIntModule::AddMenuExtension(FMenuBuilder& Builder)
 {
-	Builder.AddMenuEntry(FUnrealEnhancementsCommands::Get().PluginAction);
+	Builder.AddMenuEntry(FParticleModIntCommands::Get().PluginAction);
 }
 
-void FUnrealEnhancementsModule::AddToolbarExtension(FToolBarBuilder& Builder)
+void FParticleModIntModule::AddToolbarExtension(FToolBarBuilder& Builder)
 {
-	Builder.AddToolBarButton(FUnrealEnhancementsCommands::Get().PluginAction);
+	Builder.AddToolBarButton(FParticleModIntCommands::Get().PluginAction);
 }
 
 #undef LOCTEXT_NAMESPACE
 	
-IMPLEMENT_MODULE(FUnrealEnhancementsModule, UnrealEnhancements)
+IMPLEMENT_MODULE(FParticleModIntModule, ParticleModInt)

@@ -6,13 +6,13 @@
 #include "CoreMinimal.h"
 #include "UObject/ObjectMacros.h"
 #include "Distributions/DistributionFloat.h"
-#include "UnrealEnhancementsParticleModuleBase.h"
+#include "ParticleModIntParticleModuleBase.h"
 #include "ParticleModuleFaceVelocityDirection.generated.h"
 
 struct FParticleEmitterInstance;
 
 UCLASS(editinlinenew, hidecategories=Object, meta=(DisplayName = "Face Velocity Direction"))
-class UParticleModuleFaceVelocityDirection : public UUnrealEnhancementsParticleModuleBase
+class UParticleModuleFaceVelocityDirection : public UParticleModIntParticleModuleBase
 {
 	GENERATED_UCLASS_BODY()
 

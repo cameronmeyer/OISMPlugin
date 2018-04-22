@@ -6,13 +6,13 @@
 #include "CoreMinimal.h"
 #include "UObject/ObjectMacros.h"
 #include "Distributions/DistributionFloat.h"
-#include "UnrealEnhancementsParticleModuleBase.h"
+#include "ParticleModIntParticleModuleBase.h"
 #include "ParticleModuleRotationBySpeed.generated.h"
 
 struct FParticleEmitterInstance;
 
 UCLASS(editinlinenew, hidecategories = Object, meta = (DisplayName = "Rotation By Speed"))
-class UParticleModuleRotationBySpeed : public UUnrealEnhancementsParticleModuleBase
+class UParticleModuleRotationBySpeed : public UParticleModIntParticleModuleBase
 {
 	GENERATED_UCLASS_BODY()
 

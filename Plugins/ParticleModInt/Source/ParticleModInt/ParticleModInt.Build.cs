@@ -2,15 +2,15 @@
 
 using UnrealBuildTool;
 
-public class UnrealEnhancementsRuntime : ModuleRules
+public class ParticleModInt : ModuleRules
 {
-	public UnrealEnhancementsRuntime(ReadOnlyTargetRules Target) : base(Target)
+	public ParticleModInt(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
 		PublicIncludePaths.AddRange(
 			new string[] {
-				"UnrealEnhancementsRuntime/Public"
+				"ParticleModInt/Public"
 				// ... add public include paths required here ...
 			}
 			);
@@ -18,7 +18,7 @@ public class UnrealEnhancementsRuntime : ModuleRules
 		
 		PrivateIncludePaths.AddRange(
 			new string[] {
-                "UnrealEnhancementsRuntime/Private",
+				"ParticleModInt/Private",
 				// ... add other private include paths required here ...
 			}
 			);
@@ -40,6 +40,8 @@ public class UnrealEnhancementsRuntime : ModuleRules
 				"InputCore",
 				"CoreUObject",
 				"Engine",
+				"Slate",
+				"SlateCore",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
